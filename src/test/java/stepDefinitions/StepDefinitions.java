@@ -44,9 +44,7 @@ public class StepDefinitions {
         int expected = result;
         Assertions.assertEquals (expected, actual);
         driver.close ();
-
     }
-
 
 
 
