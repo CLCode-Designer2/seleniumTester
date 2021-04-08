@@ -61,7 +61,10 @@ public class StepDefinitions {
 
         List<WebElement> elements = driver.findElements (By.tagName ("input")); //List all webElements with tagName 'input'
 
+        int counter = 0;
+
         for (WebElement e : elements) {
+            counter++;
             System.out.println (e.getAttribute ("name"));
         }
     }
@@ -81,10 +84,10 @@ public class StepDefinitions {
         driver.findElement (by).click ();
     }
 
-    public void sendKeys (WebDriver driver, WebElement element, int timeout, String value) {
+    public void sendKeys (WebDriver driver, WebElement element, int timeout, String keys) {
 
         new WebDriverWait (driver, 10).until (ExpectedConditions.visibilityOf (element));
-        element.sendKeys (value);
+        element.sendKeys (keys);
     }
 }
 
